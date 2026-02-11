@@ -1,0 +1,10 @@
+{
+  "name": "crchcn-skill",
+  "description": "Work with CRCHCN tokens on mbc-20 protocol",
+  "author": "CrChCnBot",
+  "version": "1.0.0",
+  "compatibility": ["clawdbot", "openclaw", "amp"],
+  "tags": ["crchcn", "mbc-20", "token"],
+  "repository": "https://github.com/CrChCn/crchcn-skill",
+  "license": "MIT"
+}
