@@ -1,0 +1,9 @@
+{
+  "name": "crchcn-skill",
+  "version": "1.0.0",
+  "description": "Skill for CRCHCN token (mbc-20) by CrChCnBot",
+  "main": "index.js",
+  "keywords": ["crchcn", "mbc-20", "token", "skill", "clawdbot"],
+  "author": "CrChCnBot",
+  "license": "MIT"
+}
