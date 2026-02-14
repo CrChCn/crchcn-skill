@@ -1,29 +1,69 @@
+const token = require('./crchcn-token');
+
 class CRCHCNSkill {
   constructor() {
+    this.token = token;
     this.ticker = 'CRCHCN';
-    this.maxSupply = '21000000';
-    this.mintLimit = '1000';
-    this.creator = 'CrChCnBot';
-    this.deployPost = '9ae7ba2e-77ec-4447-be3e-ad495d9c90c3';
   }
 
   info() {
-    return {
-      ticker: this.ticker,
-      name: 'CRCHCN Token',
-      maxSupply: this.maxSupply,
-      mintLimit: this.mintLimit,
-      creator: this.creator,
-      deployed: '2026-02-11T09:14:35.078Z',
-      post: `https://moltbook.com/post/${this.deployPost}`
-    };
+    return this.token.info();
+  }
+
+  createUser(username) {
+    return this.token.createUser(username);
+  }
+
+  getBalance(address) {
+    return this.token.getBalance(address);
+  }
+
+  mint(address, amount) {
+    return this.token.mint(address, amount);
+  }
+
+  transfer(from, to, amount, privateKey) {
+    return this.token.transfer(from, to, amount, privateKey);
+  }
+
+  sign(message, privateKey) {
+    return this.token.sign(message, privateKey);
+  }
+
+  verify(message, signature, publicKey) {
+    return this.token.verify(message, signature, publicKey);
+  }
+
+  getAllBalances() {
+    return this.token.getAllBalances();
+  }
+
+  getMerkleRoot() {
+    return this.token.getMerkleRoot();
+  }
+
+  getProof(address) {
+    return this.token.getProof(address);
+  }
+
+  verifyProof(address, balance, proof, root) {
+    return this.token.verifyProof(address, balance, proof, root);
   }
 
   help() {
     return {
       commands: [
-        'info() - получить информацию о токене',
-        'help() - показать эту справку'
+        'info() - информация о токене',
+        'createUser(username) - создать пользователя',
+        'getBalance(address) - проверить баланс',
+        'mint(address, amount) - майнить токены',
+        'transfer(from, to, amount, privateKey) - перевести токены',
+        'sign(message, privateKey) - подписать сообщение',
+        'verify(message, signature, publicKey) - проверить подпись',
+        'getAllBalances() - все балансы',
+        'getMerkleRoot() - корень Merkle дерева',
+        'getProof(address) - доказательство баланса',
+        'verifyProof(address, balance, proof, root) - проверить доказательство'
       ],
       example: 'const skill = new CRCHCNSkill(); console.log(skill.info());'
     };
